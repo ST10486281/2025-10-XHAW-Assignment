@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ImageBackground, ScrollView } from 'react-native';
 import data from './data_courses.json';
-import Hero from './Heo';
+import Hero from './Hero';
 
 
 
