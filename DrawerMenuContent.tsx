@@ -31,6 +31,16 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
           navigate('Details');
         }}
       />
+      <Drawer.Item
+        label="SampleCourse"
+        icon="information-outline"
+        active={active === 'SampleCourse'}
+        onPress={() => {
+          setActive('SampleCourse');
+          onClose();
+          navigate('SampleCourse');
+        }}
+      />
       {/* add more Drawer.Item here if needed */}
     </Drawer.Section>
   );
