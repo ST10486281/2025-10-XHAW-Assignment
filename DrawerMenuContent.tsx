@@ -44,7 +44,7 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
 
       <Drawer.Item
         label="Sewing"
-        icon='information-outline'
+        icon="information-outline"
         active={active === 'sewing'}
         onPress={() => {
           setActive('sewing');
@@ -52,6 +52,62 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
           navigate('SampleCourse', { slug: 'sewing' });
         }}
       />
+
+      <Drawer.Item
+        label="Landscaping"
+        icon="information-outline"
+        active={active === 'landscaping'}
+        onPress={() => {
+          setActive('landscaping');
+          onClose();
+          navigate('SampleCourse', { slug: 'landscaping' });
+        }}
+      />
+
+      <Drawer.Item
+        label="Life Skills"
+        icon="information-outline"
+        active={active === 'life-skills'}
+        onPress={() => {
+          setActive('life-skills');
+          onClose();
+          navigate('SampleCourse', { slug: 'life-skills' });
+        }}
+      />
+
+      <Drawer.Item
+        label="Child Minding"
+        icon="information-outline"
+        active={active === 'child-minding'}
+        onPress={() => {
+          setActive('child-minding');
+          onClose();
+          navigate('SampleCourse', { slug: 'child-minding' });
+        }}
+      />
+
+      <Drawer.Item
+        label="Cooking"
+        icon="information-outline"
+        active={active === 'cooking'}
+        onPress={() => {
+          setActive('cooking');
+          onClose();
+          navigate('SampleCourse', { slug: 'cooking' });
+        }}
+      />
+
+      <Drawer.Item
+        label="Garden Maintenance"
+        icon="information-outline"
+        active={active === 'garden-maintenance'}
+        onPress={() => {
+          setActive('garden-maintenance');
+          onClose();
+          navigate('SampleCourse', { slug: 'garden-maintenance' });
+        }}
+      />
+
 
 
       {/* add more Drawer.Item here if needed */}

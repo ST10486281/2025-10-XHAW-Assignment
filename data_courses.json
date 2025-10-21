@@ -2,7 +2,7 @@
     {
         "slug": "first-aid",
         "name": "First Aid Course",
-        "tagline": "Provide first aid awareness and basic life support",
+        "tagline": "Provides first aid awareness and basic life support",
         "course length": "long",
         "image": "/images/course_first_aid.jpg",
         "topics covered": [
@@ -17,7 +17,7 @@
     {
         "slug": "sewing",
         "name": "Sewing Course",
-        "tagline": "Provides alterations and new garment tailoring skills",
+        "tagline": "Provide alterations and new garment tailoring skills",
         "course length": "long",
         "image": "/images/course_sewing.jpg",
         "topics covered": [
@@ -28,5 +28,76 @@
             "Designing and sewing new garments"
         ],
         "price": 1500
+    },
+    {
+        "slug": "landscaping",
+        "name": "Landscaping Course",
+        "tagline": "Provide landscaping services for new and established gardens",
+        "course length": "long",
+        "image": "/images/course_landscaping.jpg",
+        "topics covered": [
+            "Indigenous and exotic plants and trees",
+            "Fixed structures (fountains, statues, benches, tables, built-in braai)",
+            "Balancing of plants and trees in a garden",
+            "Aesthetics of plant shapes and colours",
+            "Garden layout"
+        ],
+        "price": 1500
+    },
+    {
+        "slug": "life-skills",
+        "name": "Life Skills Course",
+        "tagline": "Provide skills to navigate basic life necessities",
+        "course length": "long",
+        "image": "/images/course_life.jpg",
+        "topics covered": [
+            "Opening a bank account",
+            "Basic labour law (know your rights)",
+            "Basic reading and writing literacy",
+            "Basic numeric literacy"
+        ],
+        "price": 1500
+    },
+    {
+        "slug": "child-minding",
+        "name": "Child Minding Course",
+        "tagline": "Provide basic child and baby care",
+        "course length": "short",
+        "image": "/images/course_child.jpg",
+        "topics covered": [
+            "Birth to six-month-old baby needs",
+            "Seven-month to one-year-old needs",
+            "Toddler needs",
+            "Educational toys"
+        ],
+        "price": 750
+    },
+    {
+        "slug": "cooking",
+        "name": "Cooking Course",
+        "tagline": "Prepare and cook nutritious family meals",
+        "course length": "short",
+        "image": "/images/course_cooking.jpg",
+        "topics covered": [
+            "Nutritional requirements for a healthy body",
+            "Types of protein, carbohydrates and vegetables",
+            "Planning meals",
+            "Tasty and nutritious recipes",
+            "Preparation and cooking of meals"
+        ],
+        "price": 750
+    },
+    {
+        "slug": "garden-maintenance",
+        "name": "Garden Maintenance Course",
+        "tagline": "Provide basic knowledge of watering, pruning and planting in a domestic garden",
+        "course length": "short",
+        "image": "/images/course_garden.jpg",
+        "topics covered": [
+            "Water restrictions and watering requirements of indigenous and exotic plants",
+            "Pruning and propagation of plants",
+            "Planting techniques for different plant types"
+        ],
+        "price": 750
     }
 ]

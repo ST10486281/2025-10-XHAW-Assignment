@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => {
     courseLength.toLowerCase() === 'long'
       ? 'Long Course (6 Months)'
       : courseLength.toLowerCase() === 'short'
-      ? 'Short Course (3 Months)'
+      ? 'Short Course (6 Weeks)'
       : courseLength;
 
   return (

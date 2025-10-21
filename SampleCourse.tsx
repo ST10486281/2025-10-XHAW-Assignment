@@ -36,7 +36,7 @@ export default function SampleCourse({ route }: any) {
         ))}
 
         <Text style={{ marginTop: 20, fontSize: 18, fontWeight: '600', color: '#3f51b5' }}>
-          Price: ${course.price}
+          Price: R{course.price}
         </Text>
       </View>
     </View>
