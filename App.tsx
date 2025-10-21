@@ -33,7 +33,18 @@ export default function App() {
     <PaperProvider theme={theme}>
       <ScrollView style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
         {/* <ScrollView contentContainerStyle={{ flexGrow: 1 }}> */}
-        <NavigationContainer ref={navRef}>
+        <NavigationContainer
+          ref={navRef}
+          linking={{
+            prefixes: ['http://localhost:19006', 'https://yourapp.com'],
+            config: {
+              screens: {
+                Home: '',
+                Details: 'details',
+              },
+            },
+          }}
+        >
           <Stack.Navigator
             screenOptions={({ route, navigation }) => ({
               headerTitle: () => <BreadcrumbHeader route={route} navigation={navigation} />,
