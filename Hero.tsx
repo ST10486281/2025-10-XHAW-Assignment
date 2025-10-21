@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
-import { Surface } from 'react-native-paper';
 
 type HeroProps = {
   name: string;
@@ -13,24 +12,22 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => (
   <ImageBackground
     source={{ uri: image }}
     style={{
-      height: 300,
+      width: '100%',
+      height: 350,
       justifyContent: 'center',
       alignItems: 'center',
     }}
-    imageStyle={{ opacity: 0.6 }}
+    imageStyle={{ opacity: 0.5 }}
   >
-    <Surface
+    <View
       style={{
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        padding: 16,
-        borderRadius: 12,
         alignItems: 'center',
+        paddingHorizontal: 16,
       }}
-      elevation={4}
     >
       <Text
         style={{
-          fontSize: 28,
+          fontSize: 32,
           fontWeight: 'bold',
           color: '#fff',
           textAlign: 'center',
@@ -41,10 +38,11 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => (
 
       <Text
         style={{
-          fontSize: 16,
-          color: '#eee',
+          fontSize: 18,
+          color: '#fff',
           textAlign: 'center',
-          marginTop: 6,
+          marginTop: 8,
+          maxWidth: 500,
         }}
       >
         {tagline}
@@ -52,15 +50,16 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => (
 
       <Text
         style={{
-          fontSize: 14,
-          color: '#ddd',
+          fontSize: 16,
+          color: '#fff',
           textAlign: 'center',
-          marginTop: 4,
+          marginTop: 8,
+          fontStyle: 'italic',
         }}
       >
         {courseLength} Course
       </Text>
-    </Surface>
+    </View>
   </ImageBackground>
 );
 

@@ -1,13 +1,16 @@
 [
     {
-        "name": "ssss",
-        "tagline": "ssss",
-        "course length": "ssss",
-        "image": "ssss",
+        "name": "First Aid",
+        "tagline": "Provide first aid awareness and basic life support",
+        "course length": "long",
+        "image": "./images/course_first_aid.jpg",
         "topics covered": [
-            "dddddd",
-            "dddddd2"
+            "Wounds and bleeding",
+            "Burns and fractures",
+            "Emergency scene management",
+            "Cardio-Pulmonary Resuscitation (CPR)",
+            "Respiratory distress e.g., Choking, blocked airway"
         ],
-        "price": 100.50
+        "price": 1500
     }
 ]
