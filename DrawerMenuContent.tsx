@@ -32,6 +32,16 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
         }}
       />
       <Drawer.Item
+        label="Get Quote"
+        icon="information-outline"
+        active={active === 'GetQuote'}
+        onPress={() => {
+          setActive('GetQuote');
+          onClose();
+          navigate('GetQuote');
+        }}
+      />
+      <Drawer.Item
         label="First Aid"
         icon="information-outline"
         active={active === 'first-aid'}
