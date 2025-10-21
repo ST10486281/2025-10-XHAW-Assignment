@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { ScrollView } from 'react-native'; // 👈 add
+import { ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Provider as PaperProvider, IconButton, Portal, Modal, MD3LightTheme  } from 'react-native-paper';
-
+import { Provider as PaperProvider, IconButton, Portal, Modal, MD3LightTheme } from 'react-native-paper';
 
 import BreadcrumbHeader from './BreadcrumbHeader';
 import DrawerMenuContent from './DrawerMenuContent';
-
 
 import HomeScreen from './HomeScreen';
 import SampleCourse from './SampleCourse';
@@ -23,43 +21,35 @@ const theme = {
   },
 };
 
-
 export default function App() {
   const navRef = useRef<any>(null);
   const [menuVisible, setMenuVisible] = useState(false);
   const [active, setActive] = useState('home');
 
+  const linking = {
+    prefixes: ['http://localhost:19006', 'https://yourapp.com'],
+    config: {
+      screens: {
+        Home: '',
+        SampleCourse: 'course/:slug',
+      },
+    },
+  };
+
   return (
     <PaperProvider theme={theme}>
       <ScrollView style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
-        {/* <ScrollView contentContainerStyle={{ flexGrow: 1 }}> */}
-        <NavigationContainer
-          ref={navRef}
-          linking={{
-            prefixes: ['http://localhost:19006', 'https://yourapp.com'],
-            config: {
-              screens: {
-                Home: '',
-                Details: 'details',
-              },
-            },
-          }}
-        >
+        <NavigationContainer ref={navRef} linking={linking}>
           <Stack.Navigator
             screenOptions={({ route, navigation }) => ({
               headerTitle: () => <BreadcrumbHeader route={route} navigation={navigation} />,
               headerLeft: () => null,
-              headerRight: () => (
-                <IconButton icon="menu" onPress={() => setMenuVisible(true)} />
-              ),
+              headerRight: () => <IconButton icon="menu" onPress={() => setMenuVisible(true)} />,
               contentStyle: { flex: 1 },
             })}
           >
-            
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="SampleCourse" component={SampleCourse} />
-
-
           </Stack.Navigator>
 
           {/* Drawer Menu */}
@@ -81,12 +71,11 @@ export default function App() {
                 active={active}
                 setActive={setActive}
                 onClose={() => setMenuVisible(false)}
-                navigate={(name) => navRef.current?.navigate(name)}
+                navigate={(name, params) => navRef.current?.navigate(name, params)}
               />
             </Modal>
           </Portal>
         </NavigationContainer>
-        
       </ScrollView>
     </PaperProvider>
   );

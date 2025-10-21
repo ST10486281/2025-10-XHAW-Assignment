@@ -1,15 +1,31 @@
 [
     {
-        "name": "First Aid",
+        "slug": "first-aid",
+        "name": "First Aid Course",
         "tagline": "Provide first aid awareness and basic life support",
         "course length": "long",
-        "image": "./images/course_first_aid.jpg",
+        "image": "/images/course_first_aid.jpg",
         "topics covered": [
             "Wounds and bleeding",
             "Burns and fractures",
             "Emergency scene management",
             "Cardio-Pulmonary Resuscitation (CPR)",
             "Respiratory distress e.g., Choking, blocked airway"
+        ],
+        "price": 1500
+    },
+    {
+        "slug": "sewing",
+        "name": "Sewing Course",
+        "tagline": "Provides alterations and new garment tailoring skills",
+        "course length": "long",
+        "image": "/images/course_sewing.jpg",
+        "topics covered": [
+            "Types of stitches",
+            "Threading a sewing machine",
+            "Sewing buttons, zips, hems and seams",
+            "Alterations",
+            "Designing and sewing new garments"
         ],
         "price": 1500
     }

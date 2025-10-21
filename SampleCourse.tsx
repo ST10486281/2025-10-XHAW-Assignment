@@ -1,15 +1,22 @@
 import React from 'react';
-import { View, Text, ImageBackground, ScrollView } from 'react-native';
+import { View, Text } from 'react-native';
 import data from './data_courses.json';
 import Hero from './Hero';
 
+export default function SampleCourse({ route }: any) {
+  const { slug } = route.params;
+  const course = data.find((c) => c.slug === slug);
 
-
-export default function SampleCourse() {
-  const course = data[0];
+  if (!course) {
+    return (
+      <View style={{ alignItems: 'center', padding: 40 }}>
+        <Text style={{ fontSize: 18, color: '#444' }}>Course not found.</Text>
+      </View>
+    );
+  }
 
   return (
-    <View >
+    <View>
       <Hero
         name={course.name}
         tagline={course.tagline}
