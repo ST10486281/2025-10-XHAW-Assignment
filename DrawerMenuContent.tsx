@@ -22,16 +22,6 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
         }}
       />
       <Drawer.Item
-        label="Details"
-        icon="information-outline"
-        active={active === 'details'}
-        onPress={() => {
-          setActive('details');
-          onClose();
-          navigate('Details');
-        }}
-      />
-      <Drawer.Item
         label="Get Quote"
         icon="information-outline"
         active={active === 'GetQuote'}
@@ -42,79 +32,35 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
         }}
       />
       <Drawer.Item
-        label="First Aid"
+        label="Short Courses"
         icon="information-outline"
-        active={active === 'first-aid'}
+        active={active === 'ShortCourses'}
         onPress={() => {
-          setActive('first-aid');
+          setActive('ShortCourses');
           onClose();
-          navigate('SampleCourse', { slug: 'first-aid' });
+          navigate('ShortCourses');
         }}
       />
 
       <Drawer.Item
-        label="Sewing"
+        label="Long Courses"
         icon="information-outline"
-        active={active === 'sewing'}
+        active={active === 'LongCourses'}
         onPress={() => {
-          setActive('sewing');
+          setActive('LongCourses');
           onClose();
-          navigate('SampleCourse', { slug: 'sewing' });
+          navigate('LongCourses');
         }}
       />
 
       <Drawer.Item
-        label="Landscaping"
+        label="Contact"
         icon="information-outline"
-        active={active === 'landscaping'}
+        active={active === 'Contact'}
         onPress={() => {
-          setActive('landscaping');
+          setActive('Contact');
           onClose();
-          navigate('SampleCourse', { slug: 'landscaping' });
-        }}
-      />
-
-      <Drawer.Item
-        label="Life Skills"
-        icon="information-outline"
-        active={active === 'life-skills'}
-        onPress={() => {
-          setActive('life-skills');
-          onClose();
-          navigate('SampleCourse', { slug: 'life-skills' });
-        }}
-      />
-
-      <Drawer.Item
-        label="Child Minding"
-        icon="information-outline"
-        active={active === 'child-minding'}
-        onPress={() => {
-          setActive('child-minding');
-          onClose();
-          navigate('SampleCourse', { slug: 'child-minding' });
-        }}
-      />
-
-      <Drawer.Item
-        label="Cooking"
-        icon="information-outline"
-        active={active === 'cooking'}
-        onPress={() => {
-          setActive('cooking');
-          onClose();
-          navigate('SampleCourse', { slug: 'cooking' });
-        }}
-      />
-
-      <Drawer.Item
-        label="Garden Maintenance"
-        icon="information-outline"
-        active={active === 'garden-maintenance'}
-        onPress={() => {
-          setActive('garden-maintenance');
-          onClose();
-          navigate('SampleCourse', { slug: 'garden-maintenance' });
+          navigate('Contact');
         }}
       />
 
