@@ -54,7 +54,7 @@ export default function HomePage() {
           {/* Long Courses */}
           <Col xs={12} md={6}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('SampleCourse', { slug: 'first-aid' })}
+              onPress={() => navigation.navigate('LongCourses')}
             >
               <Card >
                 <ImageBackground
