@@ -23,7 +23,7 @@ export default function HomePage() {
           {/* Short Courses */}
           <Col xs={12} md={6}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('SampleCourse', { slug: 'child-minding' })}
+              onPress={() => navigation.navigate('ShortCourses')}
             >
               <Card >
                 <ImageBackground

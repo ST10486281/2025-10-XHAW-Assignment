@@ -10,6 +10,7 @@ import DrawerMenuContent from './DrawerMenuContent';
 import HomeScreen from './HomeScreen';
 import SampleCourse from './SampleCourse';
 import GetQuote from './GetQuote';
+import ShortCourses from './ShortCourses';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +53,7 @@ export default function App() {
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="SampleCourse" component={SampleCourse} />
             <Stack.Screen name="GetQuote" component={GetQuote} />
+            <Stack.Screen name="ShortCourses" component={ShortCourses} />
           </Stack.Navigator>
 
           {/* Drawer Menu */}
