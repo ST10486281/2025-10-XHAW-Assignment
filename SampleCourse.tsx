@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 import data from './data_courses.json';
 import Hero from './Hero';
 
 export default function SampleCourse({ route }: any) {
   const { slug } = route.params;
+  const navigation = useNavigation();
   const course = data.find((c) => c.slug === slug);
 
   if (!course) {
@@ -38,6 +41,23 @@ export default function SampleCourse({ route }: any) {
         <Text style={{ marginTop: 20, fontSize: 18, fontWeight: '600', color: '#3f51b5' }}>
           Price: R{course.price}
         </Text>
+
+        {/* Action Buttons */}
+        <View style={{ flexDirection: 'row', gap: 12, marginTop: 30 }}>
+          <Button
+            mode="contained"
+            onPress={() => navigation.navigate('GetQuote')}
+          >
+            Get a Quote
+          </Button>
+
+          <Button
+            mode="outlined"
+            onPress={() => navigation.navigate('Contact')}
+          >
+            Contact Us
+          </Button>
+        </View>
       </View>
     </View>
   );
