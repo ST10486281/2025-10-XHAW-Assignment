@@ -57,11 +57,11 @@ export default function LongCourses() {
                           textAlign: 'center' }}>
                           R{course.price.toFixed(2)}
                         </Text>
-                        <Text style={{ fontSize: 14, marginBottom: 6, 
+                        {/* <Text style={{ fontSize: 14, marginBottom: 6, 
                           color: '#fff',
                           textAlign: 'center' }}>
                           {course.tagline}
-                        </Text>
+                        </Text> */}
                       </Card.Content>
                     </View>
                   </ImageBackground>
