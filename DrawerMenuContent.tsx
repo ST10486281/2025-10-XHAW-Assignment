@@ -64,6 +64,17 @@ export default function DrawerMenuContent({ active, setActive, onClose, navigate
         }}
       />
 
+      <Drawer.Item
+        label="About"
+        icon="information-outline"
+        active={active === 'About'}
+        onPress={() => {
+          setActive('About');
+          onClose();
+          navigate('About');
+        }}
+      />
+
 
 
       {/* add more Drawer.Item here if needed */}

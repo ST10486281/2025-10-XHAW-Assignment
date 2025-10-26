@@ -13,6 +13,7 @@ import GetQuote from './GetQuote';
 import ShortCourses from './ShortCourses';
 import LongCourses from './LongCourses';
 import Contact from './Contact';
+import About from './About';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,7 @@ export default function App() {
             <Stack.Screen name="ShortCourses" component={ShortCourses} />
             <Stack.Screen name="LongCourses" component={LongCourses} />
             <Stack.Screen name="Contact" component={Contact} />
+            <Stack.Screen name="About" component={About} />
           </Stack.Navigator>
 
           {/* Drawer Menu */}
