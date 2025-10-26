@@ -26,14 +26,13 @@ export default function About() {
                 marginBottom: 12,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget 
-              imperdiet orci. In euismod ante vitae orci egestas, et pharetra purus 
-              dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et 
-              ultrices posuere cubilia curae; Duis quis libero sit amet nunc ultricies 
-              ultricies sed non elit. Nullam vel diam nec augue convallis cursus sit 
-              amet vitae sapien.
+                We are a training center that provides skills training to domestic workers and gardeners.
+                Our mission is community empowerment through skills training.
+                We offer 6 week and 6 month programs.
+                We have had an impact on thousands of students.
+
             </Text>
-            <Text
+            {/* <Text
               style={{
                 fontSize: 16,
                 lineHeight: 24,
@@ -59,7 +58,7 @@ export default function About() {
               tincidunt pharetra. In auctor metus at elit vulputate, vel dictum nibh 
               efficitur. Suspendisse gravida, mi ut congue dapibus, lorem lorem 
               malesuada ligula, nec commodo felis felis sit amet magna.
-            </Text>
+            </Text> */}
           </Col>
         </Row>
       </Container>
