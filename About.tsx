@@ -2,6 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { Container, Row, Col } from 'react-native-flex-grid';
 import Hero from './Hero';
+import Footer from './Footer';
 
 export default function About() {
   return (
@@ -62,6 +63,7 @@ export default function About() {
           </Col>
         </Row>
       </Container>
+      <Footer/>
     </>
   );
 }

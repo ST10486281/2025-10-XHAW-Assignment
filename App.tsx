@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ScrollView, View, useWindowDimensions, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, useWindowDimensions, Image, TouchableOpacity, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider as PaperProvider, IconButton, Portal, Modal, MD3LightTheme, Drawer } from 'react-native-paper';
@@ -110,6 +110,10 @@ export default function App() {
       </Container>
     </View>
   );
+
+
+
+  
   
   return (
     <PaperProvider theme={theme}>

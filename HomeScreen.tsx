@@ -4,6 +4,7 @@ import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Container, Row, Col } from 'react-native-flex-grid';
 import Hero from './Hero';
+import Footer from './Footer';
 
 export default function HomePage() {
   const navigation = useNavigation();
@@ -83,6 +84,7 @@ export default function HomePage() {
           </Col>
         </Row>
       </Container>
+      <Footer/>
     </View>
   );
 }

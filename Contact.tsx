@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 import { TextInput, Button, Card } from 'react-native-paper';
 import { Container, Row, Col } from 'react-native-flex-grid';
 import Hero from './Hero';
+import Footer from './Footer';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -105,6 +106,7 @@ export default function Contact() {
           ))}
         </Row>
       </Container>
+      <Footer/>
     </>
   );
 }

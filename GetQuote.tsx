@@ -5,6 +5,7 @@ import { TextInput, Button, Checkbox, Card } from 'react-native-paper';
 import { Container, Row, Col } from 'react-native-flex-grid';
 import data from './data_courses.json';
 import Hero from './Hero';
+import Footer from './Footer';
 
 export default function GetQuote() {
   const [name, setName] = useState('');
@@ -117,6 +118,7 @@ export default function GetQuote() {
           </Row>
         )}
       </Container>
+      <Footer/>
     </View>
   );
 }

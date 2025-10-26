@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-native-flex-grid';
 import { useNavigation } from '@react-navigation/native';
 import Hero from './Hero';
 import data from './data_courses.json';
+import Footer from './Footer';
 
 export default function ShortCourses() {
   const navigation = useNavigation();
@@ -71,6 +72,7 @@ export default function ShortCourses() {
           ))}
         </Row>
       </Container>
+      <Footer/>
     </>
   );
 }

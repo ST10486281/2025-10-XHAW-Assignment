@@ -4,6 +4,7 @@ import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import data from './data_courses.json';
 import Hero from './Hero';
+import Footer from './Footer';
 
 export default function SampleCourse({ route }: any) {
   const { slug } = route.params;
@@ -59,6 +60,7 @@ export default function SampleCourse({ route }: any) {
           </Button>
         </View>
       </View>
+      <Footer/>
     </View>
   );
 }
