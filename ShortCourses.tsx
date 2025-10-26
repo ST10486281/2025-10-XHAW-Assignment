@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
 import { Container, Row, Col } from 'react-native-flex-grid';
 import { useNavigation } from '@react-navigation/native';
@@ -31,33 +31,40 @@ export default function ShortCourses() {
                     source={{ uri: course.image }}
                     style={{
                       height: 180,
-                      justifyContent: 'flex-end',
-                      padding: 10,
                     }}
                     imageStyle={{ opacity: 0.85 }}
                   >
-                    <Text
-                      style={{
-                        fontSize: 18,
-                        fontWeight: 'bold',
-                        color: '#fff',
-                        backgroundColor: 'rgba(0,0,0,0.5)',
-                        paddingHorizontal: 6,
-                        borderRadius: 4,
-                      }}
-                    >
-                      {course.name.replace('Course', '')}
-                    </Text>
+                    <View style={{ backgroundColor: 'rgba(0,0,0, 0.30)', padding: 10,
+                          borderRadius: 4, height: '100%', 
+                      justifyContent: 'flex-end',}}>
+
+                      <Text
+                        style={{
+                          fontSize: 18,
+                          fontWeight: 'bold',
+                          color: '#fff',
+                          paddingHorizontal: 6,
+                          borderRadius: 4,
+                          textAlign: 'center'
+                        }}
+                      >
+                        {course.name.replace('Course', '')}
+                      </Text>
+                      
+                      <Card.Content style={{ padding: 12 }}>
+                        <Text style={{ fontWeight: 'bold', color: '#fff', 
+                          textAlign: 'center' }}>
+                          R{course.price.toFixed(2)}
+                        </Text>
+                        <Text style={{ fontSize: 14, marginBottom: 6, 
+                          color: '#fff',
+                          textAlign: 'center' }}>
+                          {course.tagline}
+                        </Text>
+                      </Card.Content>
+                    </View>
                   </ImageBackground>
 
-                  <Card.Content style={{ padding: 12 }}>
-                    <Text style={{ fontSize: 14, marginBottom: 6 }}>
-                      {course.tagline}
-                    </Text>
-                    <Text style={{ fontWeight: 'bold', color: '#3f51b5' }}>
-                      R{course.price.toFixed(2)}
-                    </Text>
-                  </Card.Content>
                 </Card>
               </TouchableOpacity>
             </Col>

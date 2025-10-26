@@ -24,9 +24,10 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => {
         height: 350,
         justifyContent: 'center',
         alignItems: 'center',
+
       }}
     >
-      <View style={{ alignItems: 'center', paddingHorizontal: 16 }}>
+      <View style={{ alignItems: 'center', paddingHorizontal: 16,  backgroundColor: 'rgba(0,0,0, 0.30)', padding: 10, }}>
         <Text
           style={{
             fontSize: 32,
@@ -67,3 +68,4 @@ const Hero: React.FC<HeroProps> = ({ name, tagline, courseLength, image }) => {
 };
 
 export default Hero;
+

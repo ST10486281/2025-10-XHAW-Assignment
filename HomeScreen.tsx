@@ -34,7 +34,6 @@ export default function HomePage() {
                     alignItems: 'center',
                     padding: 12, paddingTop: 120,paddingBottom: 120, overflow: 'hidden'
                   }}
-                  imageStyle={{ opacity: 0.7 }}
                 >
                   <Text
                     style={{
@@ -42,6 +41,7 @@ export default function HomePage() {
                       fontWeight: 'bold',
                       color: '#fff',
                       textAlign: 'center',
+                       backgroundColor: 'rgba(0,0,0, 0.30)', padding: 10,
                     }}
                   >
                     See Short Courses
@@ -65,7 +65,6 @@ export default function HomePage() {
                     alignItems: 'center',
                     padding: 12, paddingTop: 120,paddingBottom: 120, overflow: 'hidden'
                   }}
-                  imageStyle={{ opacity: 0.7 }}
                 >
                   <Text
                     style={{
@@ -73,6 +72,7 @@ export default function HomePage() {
                       fontWeight: 'bold',
                       color: '#fff',
                       textAlign: 'center',
+                       backgroundColor: 'rgba(0,0,0, 0.30)', padding: 10,
                     }}
                   >
                     See Long Courses
