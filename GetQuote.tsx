@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { TextInput, Button, Checkbox, Card } from 'react-native-paper';
 import { Container, Row, Col } from 'react-native-flex-grid';
@@ -6,7 +6,9 @@ import data from './data_courses.json';
 import Hero from './Hero';
 import Footer from './Footer';
 
-export default function GetQuote() {
+export default function GetQuote({ route }: any) {
+  const slugFromRoute = route?.params?.slug || null;
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -14,6 +16,12 @@ export default function GetQuote() {
   const [quote, setQuote] = useState<any>(null);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; courses?: string }>({});
+
+  useEffect(() => {
+    if (slugFromRoute && !selected.includes(slugFromRoute)) {
+      setSelected([slugFromRoute]); // preselect the course
+    }
+  }, [slugFromRoute]);
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -31,7 +39,6 @@ export default function GetQuote() {
 
     const selectedCourses = data.filter((c) => selected.includes(c.slug));
     const totalBefore = selectedCourses.reduce((sum, c) => sum + c.price, 0);
-
     let discountRate = 0;
     if (selected.length === 2) discountRate = 0.05;
     else if (selected.length === 3) discountRate = 0.1;
@@ -59,7 +66,6 @@ export default function GetQuote() {
     setEmail('');
   };
 
-
   return (
     <View>
       <Hero
@@ -85,7 +91,10 @@ export default function GetQuote() {
             </Col>
           ))}
         </Row>
-        {errors.courses && <Text style={{ color: 'red', fontSize: 12, marginBottom: 10 }}>{errors.courses}</Text>}
+
+        {errors.courses && (
+          <Text style={{ color: 'red', fontSize: 12, marginBottom: 10 }}>{errors.courses}</Text>
+        )}
 
         <Button mode="contained" onPress={calculateQuote} style={{ marginTop: 16 }}>
           Calculate Quote
@@ -105,7 +114,6 @@ export default function GetQuote() {
                   Your Total: R{quote.total.toFixed(2)}
                 </Text>
 
-                {/* Contact info shown after quote */}
                 <View style={{ marginTop: 24 }}>
                   <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
                     Please provide your contact details
@@ -126,6 +134,7 @@ export default function GetQuote() {
                         </Text>
                       )}
                     </Col>
+
                     <Col xs={12} md={4}>
                       <TextInput
                         label="Phone"
@@ -140,6 +149,7 @@ export default function GetQuote() {
                         </Text>
                       )}
                     </Col>
+
                     <Col xs={12} md={4}>
                       <TextInput
                         label="Email address"

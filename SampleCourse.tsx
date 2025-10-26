@@ -47,10 +47,11 @@ export default function SampleCourse({ route }: any) {
         <View style={{ flexDirection: 'row', gap: 12, marginTop: 30 }}>
           <Button
             mode="contained"
-            onPress={() => navigation.navigate('GetQuote')}
+            onPress={() => navigation.navigate('GetQuote', { slug: course.slug })}
           >
             Get a Quote
           </Button>
+
 
           <Button
             mode="outlined"
