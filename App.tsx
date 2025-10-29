@@ -82,26 +82,40 @@ export default function App() {
           />
         </TouchableOpacity>
 
-        
         {isDesktop ? (
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
             {[
+              { label: 'Home', name: 'Home' },
               { label: 'Short Courses', name: 'ShortCourses' },
               { label: 'Long Courses', name: 'LongCourses' },
               { label: 'About', name: 'About' },
               { label: 'Get Quote', name: 'GetQuote' },
               { label: 'Contact', name: 'Contact' },
             ].map((item) => (
-              <Drawer.Item
+              <TouchableOpacity
                 key={item.name}
-                label={item.label}
-                active={active === item.name}
                 onPress={() => {
                   setActive(item.name);
                   navigation.navigate(item.name);
                 }}
-                style={{ marginHorizontal: 2 }}
-              />
+                style={{
+                  backgroundColor: active === item.name ? '#5A4FCF' : '#7C6EE4',
+                  paddingVertical: 8,
+                  paddingHorizontal: 16,
+                  borderRadius: 80,
+                  marginHorizontal: 4,
+                }}
+              >
+                <Text
+                  style={{
+                    color: '#fff',
+                    fontWeight: active === item.name ? 'bold' : 'normal',
+                    fontSize: 14,
+                  }}
+                >
+                  {item.label}
+                </Text>
+              </TouchableOpacity>
             ))}
           </View>
         ) : (
@@ -110,6 +124,7 @@ export default function App() {
       </Container>
     </View>
   );
+
 
 
 
