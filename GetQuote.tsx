@@ -33,22 +33,30 @@ export default function GetQuote({ route }: any) {
 
   const calculateQuote = () => {
     const newErrors: typeof errors = {};
-    if (selected.length === 0) newErrors.courses = 'Please select at least one course to get a quote.';
+    if (selected.length === 0)
+      newErrors.courses = 'Please select at least one course to get a quote.';
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
     const selectedCourses = data.filter((c) => selected.includes(c.slug));
     const totalBefore = selectedCourses.reduce((sum, c) => sum + c.price, 0);
+
     let discountRate = 0;
     if (selected.length === 2) discountRate = 0.05;
     else if (selected.length === 3) discountRate = 0.1;
     else if (selected.length > 3) discountRate = 0.15;
 
     const discount = totalBefore * discountRate;
-    const vat = (totalBefore - discount) * 0.15;
-    const total = totalBefore - discount + vat;
+
+    // Lecturer’s logic: VAT applies to pre-discounted total
+    const vat = totalBefore * 0.15;
+
+    // Then subtract discount after VAT
+    const total = totalBefore + vat - discount;
+
     setQuote({ totalBefore, discount, vat, total, discountRate });
   };
+
 
   const handleSubmit = () => {
     const newErrors: typeof errors = {};
@@ -84,10 +92,11 @@ export default function GetQuote({ route }: any) {
               <Checkbox.Item
                 label={`${course.name.replace('Course', '')} (${
                   course['course length'] === 'long' ? '6 Months' : '6 Weeks'
-                })`}
+                }) - R${course.price.toFixed(2)}`}
                 status={selected.includes(course.slug) ? 'checked' : 'unchecked'}
                 onPress={() => toggleCourse(course.slug)}
               />
+
             </Col>
           ))}
         </Row>
